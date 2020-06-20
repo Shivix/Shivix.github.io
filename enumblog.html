@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Scope-based Enums</title>
+</head>
+<body>
+<div class="grid-2">
+    <div class="section-1">
+        <h1>Mark Oborne</h1>
+        <h2>Software Engineer</h2>
+        <p>markoborne1@gmail.com</p>
+        <a href="https://www.linkedin.com/in/mark-oborne-534301196/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Shivix"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="section-2">
+        <h2>Scope-based enums</h2>
+        <p>Scope-based enums were added in C++11 as a way to give the programmer greater control of how the enum is used. Something
+            that can be extremely important when working on large projects or as part of a team.</p>
+        <p>Giving enums their own scope can prevent clashes with other enums. Imagine a program tracking fruits and their colours.</p>
+        <div class="codebox">
+            <code>
+                enum fruit{
+                apple,
+                orange
+                    };
+                <p></p>
+                enum colour{
+                red,
+                orange
+                    };
+            </code>
+        </div>
+        <p> This wouldn't compile, however scope-based enums enforce more specificity with the scope resolution operator
+            :: allowing you to have shared names among enums.</p>
+        <div class="codebox">
+            <code>
+                fruit::orange;
+            </code>
+        </div>
+        <p>However, if the increased verbosity is hurting the readability of your code, C++20 is coming to the rescue with
+            the ability to use the 'using' keyword with enum scopes as if they were namespaces.</p>
+        <p>An important part of standard enums is the fact that they can be implicitly converted to integers. Scoped enums
+            however, can only be explicitly converted, which can help with a lot of issues. For
+            example if you have overloaded operators where one takes an int and another takes an enum. Which function
+            will be called? Ambiguity can be your worst nightmare as a programmer. That's why nullptr is prefer to NULL
+            but that's a story for another blog.</p>
+        <p> To conclude, there's clearly many reasons to have scoped enums as your standard and I hope to see an increase in their
+            use in the future.</p>
+    </div>
+</div>
+</body>
+</html>
