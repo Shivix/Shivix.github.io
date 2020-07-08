@@ -20,11 +20,11 @@
     <div class="section-2">
         <h2>Lambda use with the Standard Template Library</h2>
         <p>Lambda expressions were added in C++11 and allow you to create temporary, unnamed functions. Though unnamed, these can be assigned to variables as they are
-        considered rvalues. Lambda's can also be immediately invoked with the () operator which allows the programmer the ability to do complex initialization on a const variable.
-        It is important to note that much of what you can do with Lambdas can be done with standard functions however Lambda's are often used to increase readability and locality
+        considered rvalues. Lambdas can also be immediately invoked with the () operator which gives the programmer the ability to do complex initialization on a const variable.
+        It is important to note that much of what you can do with lambdas can be done with standard functions however lambdas are often used to increase readability and locality
         of the code.</p>
-        <p>Lambda's can be passed to functions through function pointer parameters, something that many functions from the Standard Template Library utilise. For example, the
-        std::sort function from the algorithm header. Since the function may not know how to sort through a custom object a lambda may be used to essentially "show the function"
+        <p>Lambdas can be passed to functions through function pointer parameters, something that many functions from the Standard Template Library utilise. For example, the
+        std::sort function from the algorithm header. Since the function may not know how to sort through a custom object, a lambda may be used to essentially "show the function"
         how to sort it. More specifically it shows how to compare the values. Here is an example from a neural network library I created:</p>
         <div class="codebox">
             <code>
@@ -35,7 +35,7 @@
                 });
             </code>
         </div>
-        <p>Here the lambda is telling the sort function to compare the networks using their fitness values using the greater than operator. It is important to note here that
+        <p>Here the lambda is telling the sort function to compare the networks using their fitness values with the greater than operator. It is important to note here that
         if the less than operator was used here then it would sort the networks in ascended order rather than descending.</p>
         <p></p>
         <p></p>
