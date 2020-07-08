@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Scope-based Enums</title>
+</head>
+<body>
+<div class="grid-2">
+    <div class="section-1">
+        <h1>Mark Oborne</h1>
+        <h2>Software Engineer</h2>
+        <p>markoborne1@gmail.com</p>
+        <a href="https://www.linkedin.com/in/mark-oborne-534301196/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Shivix"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="section-2">
+        <h2>Lambda use with the Standard Template Library</h2>
+        <p>Lambda expressions were added in C++11 and allow you to create temporary, unnamed functions. Though unnamed, these can be assigned to variables as they are
+        considered rvalues. Lambda's can also be immediately invoked with the () operator which allows the programmer the ability to do complex initialization on a const variable.
+        It is important to note that much of what you can do with Lambdas can be done with standard functions however Lambda's are often used to increase readability and locality
+        of the code.</p>
+        <p>Lambda's can be passed to functions through function pointer parameters, something that many functions from the Standard Template Library utilise. For example, the
+        std::sort function from the algorithm header. Since the function may not know how to sort through a custom object a lambda may be used to essentially "show the function"
+        how to sort it. More specifically it shows how to compare the values. Here is an example from a neural network library I created:</p>
+        <div class="codebox">
+            <code>
+                std::sort(generation.begin(), generation.end(), [](const network& a, const network& b){
+                <p></p>
+                return a.fitness > b.fitness;
+                <p></p>
+                });
+            </code>
+        </div>
+        <p>Here the lambda is telling the sort function to compare the networks using their fitness values using the greater than operator. It is important to note here that
+        if the less than operator was used here then it would sort the networks in ascended order rather than descending.</p>
+        <p></p>
+        <p></p>
+        <a href="index.html" target="_self">Back</a>
+    </div>
+
+</div>
+</body>
+</html>
