@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title>Scope-based Enums</title>
+</head>
+<body>
+<div class="grid-2">
+    <div class="section-1">
+        <h1>Mark Oborne</h1>
+        <h2>Software Engineer</h2>
+        <p>markoborne1@gmail.com</p>
+        <a href="https://www.linkedin.com/in/mark-oborne-534301196/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Shivix"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="section-2">
+        <h2>Smart pointers</h2>
+        <p>Smart pointers (namely unique_ptr and shared_ptr) were added in C++11 and have become an impactful part of modern C++, helping to alleviate many issues that accompany
+            heap allocated memory.
+            Smart pointers can essentially be used as a quick and easy RAII wrapper class, allowing the memory to be deleted once the object goes out of scope and the destructor is
+            called.</p>
+        <p>I would like to talk about the differences between unique_ptr and shared_ptr.
+            The benefit of having these two types of pointers is that it ensures the programmer explicitly shows the ownership of the memory. If you read unique_ptr then you
+            know the memory will only ever have one pointer managing it, making it much simpler to manage. A shared pointer on the other hand can have many owners, something
+            that can lead to issues so must be explicit and clear. It's important to note that pointers that do not having any kind of heap allocations to manage can
+            and frankly <i>should</i> be raw pointers, again for the sake of being explicit.</p>
+        <p>My favourite part of smart pointers is the beautifully simple way that unique_ptr forces its uniqueness once created with just a single keyword... "delete" which it uses to
+            explicitly delete the copy constructor and copy assignment, only allowing move semantics to be used which would keep it unique.</p>
+        <p>Smart pointers also progressed into having their own functions for allocating memory on the heap. These being make_unique and make_shared which should always be used
+            over new and delete when using smart pointers.
+            In C++14 and onwards, new and delete should be avoided, unless placement new and delete are required for more specific memory management.</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <a href="../index.html" target="_self">Back</a>
+    </div>
+
+</div>
+</body>
+</html>
